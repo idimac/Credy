@@ -21,12 +21,14 @@
       </ul>
     </div>
   </nav>
+  <sender url="https://frontend.recruiting.credy.com/v1/posts" @receivedData="makeParagraph"></sender>
 </div>
 </template>
 
 <script>
 import axios from "axios";
 import VueAxios from "vue-axios";
+import sender from "./sender"
 export default {
   name: 'BodyCustom',
   data() {
@@ -36,7 +38,13 @@ export default {
   },
   components: {
     "Axios": axios,
-    "VueAxios": VueAxios
+    "VueAxios": VueAxios,
+    "sender": sender
+  },
+  methods: {
+    makeParagraph (receivedData) {
+      console.log(receivedData);
+    }
   }
 };
 

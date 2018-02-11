@@ -56,7 +56,6 @@ export default {
         axios.get('https://frontend.recruiting.credy.com/auth?client_secret=secret&client_id=client&redirect_url=https://tools.ietf.org/html/rfc6749&response_type=code&username=as&password=as' )
         .then(function (response) {
           document.getElementById('resp').style.opacity = 100;
-          console.log(response  )
           document.getElementById('resp').innerHTML = response.data;
         })
         .catch(function (error) {
